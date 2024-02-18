@@ -1,0 +1,11 @@
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\bin\Debug\Student_Info_App.exe.config
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\bin\Debug\Student_Info_App.exe
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\bin\Debug\Student_Info_App.pdb
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.csproj.AssemblyReference.cache
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.Form1.resources
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.Properties.Resources.resources
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.csproj.GenerateResource.cache
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.csproj.CoreCompileInputs.cache
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.exe
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.pdb
+C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.Form2.resources
