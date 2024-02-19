@@ -25,6 +25,11 @@ namespace Student_Info_App
             xml_file_check();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            current_path_field.Text = xml_path;
+        }
+
         public static String get_path()
         {
             return xml_path;
@@ -49,19 +54,7 @@ namespace Student_Info_App
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void submit_button_Click(object sender, EventArgs e)
         {
             //path of this file. Kept it for the dynamic location of the xml file
             //Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
@@ -73,11 +66,11 @@ namespace Student_Info_App
             student_id_text_field.Clear();
             contact_field.Clear();
 
-            if ((id == "") && (id.GetType() != typeof(int)) && (contact.GetType() != typeof(int)))
+            if (id == "")
             {
                 message = "Enter Student ID";
             }
-
+            
             if (contact == "")
             {
                 if (message != "")
@@ -140,33 +133,18 @@ namespace Student_Info_App
             {
                 MessageBox.Show(message,"Error");
             }
-
-
         }
 
-        private void student_id_text_field_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void search_button_Click(object sender, EventArgs e)
         {
             String id = student_search_text_field.Text;
+            Console.WriteLine(id);
             student_search_text_field.Clear();
 
-            if ((id == "") && (id.GetType() != typeof(int)))
+            if ((id == "Student ID") || (id == ""))
             {
-                MessageBox.Show("Invalid Student ID", "Error");
+                MessageBox.Show("Enter Student ID", "Error");
+
             }
             else
             {
@@ -190,6 +168,8 @@ namespace Student_Info_App
                     MessageBox.Show("Data fetch failed", "Error");
                 }
             }
+
+            student_search_text_field.Text = "Student ID";
         }
 
         private void student_search_text_field_TextChanged(object sender, EventArgs e)
@@ -203,6 +183,7 @@ namespace Student_Info_App
             {
                 student_search_text_field.Clear();
             }
+            
         }
 
         private void student_search_text_field_Leave(object sender, EventArgs e)
@@ -210,25 +191,100 @@ namespace Student_Info_App
             if (student_search_text_field.Text == "")
             {
                 student_search_text_field.Text = "Student ID";
+
             }
         }
 
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
+        /*private void button2_Click_1(object sender, EventArgs e)
         {
             Form2 xml_path_change_window = new Form2();
+            xml_path_change_window.TopLevel = false;
+            this.Controls.Add(xml_path_change_window);
             xml_path_change_window.Show();
+        }*/
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabControl1.TabPages["view_all_data"])
+            {
+                DataTable dt = new DataTable("Student Info");
+
+                try
+                {
+                    XDocument xml = XDocument.Load(xml_path);
+                    XElement student_data = xml.Element("student_data");
+
+                    if (student_data != null)
+                    {
+                        //var contact = student_data.Element("contact").Value;
+                        //MessageBox.Show("Student ID: " + id + "\nContatc: " + contact, "Student found!");
+                        dt.Columns.Add("ID");
+                        dt.Columns.Add("Contact");
+
+                        Console.WriteLine(student_data);
+
+                        for (int i = 1; ; i++)
+                        {
+                            var contact = student_data.Elements("student").Where(student => student.Attribute("id").Value == Convert.ToString(i)).FirstOrDefault();
+                            //.Elements("student").Where(student => student.Attribute("id").Value == id).FirstOrDefault();
+
+                            if (contact != null)
+                            {
+                                dt.Rows.Add(i, contact.Element("contact").Value);
+
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        dt.Columns.Add("No Data Found");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Data fetch failed", "Error");
+                }
+
+                data_table.DataSource = dt;
+            }
+        }
+
+        private void changeXmlPath_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void current_path_field_TextChanged(object sender, EventArgs e)
+        {
+            current_path_field.ReadOnly = true;
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            var new_path = new_path_field.Text;
+
+            if (new_path != "")
+            {
+                new_path = ((new_path.Trim('"')).Trim('\'')).Trim(' ');
+
+                if (Form1.set_path(new_path))
+                {
+                    MessageBox.Show("Added new path.");
+                    xml_path = new_path;
+                    current_path_field.Text = xml_path;
+                    new_path_field.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("New path can not be empty.");
+            }
+
         }
     }
 
-    public class student_data
-    {
-
-        public int id { get; set; }
-        public int contact { get; set; }
-    }
 }

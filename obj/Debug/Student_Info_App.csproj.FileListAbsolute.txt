@@ -8,4 +8,3 @@ C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_
 C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.csproj.CoreCompileInputs.cache
 C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.exe
 C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.pdb
-C:\Users\Maruf\source\repos\Student_Info_App\Student_Info_App\obj\Debug\Student_Info_App.Form2.resources

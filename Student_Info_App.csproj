@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Edit Xml Location.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Edit Xml Location.Designer.cs">
-      <DependentUpon>Edit Xml Location.cs</DependentUpon>
-    </Compile>
     <Compile Include="Student Database.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,9 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Edit Xml Location.resx">
-      <DependentUpon>Edit Xml Location.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Student Database.resx">
       <DependentUpon>Student Database.cs</DependentUpon>
     </EmbeddedResource>
