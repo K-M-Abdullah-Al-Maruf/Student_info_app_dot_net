@@ -17,7 +17,7 @@ namespace Student_Info_App
     public partial class Form1 : Form
     {
         static String xml_path = "C:\\Users\\Maruf\\source\\repos\\Student_Info_App\\Student_Info_App\\Student Data.xml";
-        //static String xml_path = "C:\\Users\\Maruf\\source\\repos\\Student_Info_App\\Student Data.xml";
+        
         public Form1()
         {
             InitializeComponent();
@@ -50,15 +50,24 @@ namespace Student_Info_App
             }
             catch 
             {
-                MessageBox.Show("Xml file not found in\n" + xml_path, "Error");
+                string temp = xml_path;
+
+                xml_path = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\Student Data.xml";
+                
+                try
+                {
+                    Console.WriteLine(xml_path);
+                    XDocument xml = XDocument.Load(xml_path);
+                }
+                catch
+                {
+                    MessageBox.Show("Xml file was not found in\n" + temp + "\nor,\n" + xml_path, "Error");
+                }
             }
         }
 
         private void submit_button_Click(object sender, EventArgs e)
         {
-            //path of this file. Kept it for the dynamic location of the xml file
-            //Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
-
             String id = student_id_text_field.Text.Trim();
             String name = student_name_text_field.Text.Trim();
             String contact = contact_field.Text.Trim();
