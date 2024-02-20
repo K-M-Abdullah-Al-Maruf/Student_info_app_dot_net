@@ -274,7 +274,7 @@ namespace Student_Info_App
                         dt.Columns.Add("Major");
 
                         var query = from data in xml.Root.Descendants("student")
-                                    where (int)data.Attribute("id") > -1
+                                    where data.Attribute("id") != null
                                     select data.Attribute("id").Value + " " +
                                     data.Element("name").Value + " " +
                                     data.Element("contact").Value + " " +
