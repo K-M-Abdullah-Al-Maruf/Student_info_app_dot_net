@@ -195,14 +195,6 @@ namespace Student_Info_App
             }
         }
 
-        /*private void button2_Click_1(object sender, EventArgs e)
-        {
-            Form2 xml_path_change_window = new Form2();
-            xml_path_change_window.TopLevel = false;
-            this.Controls.Add(xml_path_change_window);
-            xml_path_change_window.Show();
-        }*/
-
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedTab == tabControl1.TabPages["view_all_data"])
@@ -216,27 +208,18 @@ namespace Student_Info_App
 
                     if (student_data != null)
                     {
-                        //var contact = student_data.Element("contact").Value;
-                        //MessageBox.Show("Student ID: " + id + "\nContatc: " + contact, "Student found!");
                         dt.Columns.Add("ID");
                         dt.Columns.Add("Contact");
 
-                        Console.WriteLine(student_data);
+                        var query = from data in xml.Root.Descendants("student")
+                                    where (int)data.Attribute("id") > -1
+                                    select data.Attribute("id").Value + " " +
+                                    data.Element("contact").Value;
 
-                        for (int i = 1; ; i++)
+                        foreach (string data in query)
                         {
-                            var contact = student_data.Elements("student").Where(student => student.Attribute("id").Value == Convert.ToString(i)).FirstOrDefault();
-                            //.Elements("student").Where(student => student.Attribute("id").Value == id).FirstOrDefault();
-
-                            if (contact != null)
-                            {
-                                dt.Rows.Add(i, contact.Element("contact").Value);
-
-                            }
-                            else
-                            {
-                                break;
-                            }
+                            var array = data.Split(' ');
+                            dt.Rows.Add(array[0], array[1]);
                         }
                     }
                     else
