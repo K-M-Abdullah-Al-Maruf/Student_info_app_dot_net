@@ -17,7 +17,7 @@ namespace Student_Info_App
     public partial class Form1 : Form
     {
         static String xml_path = "C:\\Users\\Maruf\\source\\repos\\Student_Info_App\\Student_Info_App\\Student Data.xml";
-        
+        static string update_id = null;
         public Form1()
         {
             InitializeComponent();
@@ -163,7 +163,7 @@ namespace Student_Info_App
                             new XElement("major", major)));
 
                             xml.Save(xml_path);
-                            MessageBox.Show("Contact successfully added for student id "+id, "Data");
+                            MessageBox.Show("Student info successfully added for student id "+id, "Data");
                         }
                         catch 
                         {
@@ -240,7 +240,6 @@ namespace Student_Info_App
             {
                 student_search_text_field.Clear();
             }
-            
         }
 
         private void student_search_text_field_Leave(object sender, EventArgs e)
@@ -300,6 +299,16 @@ namespace Student_Info_App
                 }
 
                 data_table.DataSource = dt;
+            }
+            else if (tabControl1.SelectedTab != tabControl1.TabPages["update"])
+            {
+                student_id_text_field_update.Clear();
+                student_name_text_field_update.Clear();
+                contact_text_field_update.Clear();
+                institution_text_field_update.Clear();
+                department_text_field_update.Clear();
+                semester_text_field_update.Clear();
+                major_text_field_update.Clear();
             }
         }
 
@@ -369,6 +378,183 @@ namespace Student_Info_App
         private void st_id_label_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_text_field_update_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void update_button_Click(object sender, EventArgs e)
+        {
+            String id = student_id_text_field_update.Text.Trim();
+            String name = student_name_text_field_update.Text.Trim();
+            String contact = contact_text_field_update.Text.Trim();
+            String institution = institution_text_field_update.Text.Trim();
+            String department = department_text_field_update.Text.Trim();
+            String semester = semester_text_field_update.Text.Trim();
+            String major = major_text_field_update.Text.Trim();
+
+            String message = "";
+
+            if (id == "")
+            {
+                message += "Enter Student ID\n";
+            }
+
+            if (name == "")
+            {
+                message += "Enter Name\n";
+            }
+
+            if (contact == "")
+            {
+                if (message != "")
+                {
+                    message += "Enter Contact Number\n";
+                }
+                else
+                {
+                    message += "Enter Contact Number\n";
+                }
+            }
+            else if ((contact.GetType() != typeof(int)) && contact.Length != 11)
+            {
+                if (message != "")
+                {
+                    message += "Invalid Contact Number\n";
+                }
+                else
+                {
+                    message += "Invalid Contact Number\n";
+                }
+            }
+
+            if (institution == "")
+            {
+                message += "Enter Institution Name\n";
+            }
+
+            if (department == "")
+            {
+                message += "Enter Department Name\n";
+            }
+
+            if (semester == "")
+            {
+                message += "Enter Semester\n";
+            }
+
+            if (major == "")
+            {
+                message += "Enter Major\n";
+            }
+
+            if (message == "")
+            {
+
+                try
+                {
+                    XDocument xml = XDocument.Load(xml_path);
+                    XElement student_search = xml.Element("student_data").Elements("student").Where(student => student.Attribute("id").Value == update_id).FirstOrDefault();
+
+                    XElement student_data = xml.Element("student_data");
+
+                    try
+                    {
+                        student_search.Attribute("id").Value = id;
+                        student_search.Element("name").Value = name;
+                        student_search.Element("contact").Value = contact;
+                        student_search.Element("institution").Value = institution;
+                        student_search.Element("department").Value = department;
+                        student_search.Element("semester").Value = semester;
+                        student_search.Element("major").Value = major;
+
+
+                        xml.Save(xml_path);
+
+                        MessageBox.Show("Info successfully updated for student id " + id, "Data");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Data append failed.", "Error");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Xml file not found.", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show(message, "Error");
+            }
+
+
+        }
+
+        private void search_button_update_Click(object sender, EventArgs e)
+        {
+            update_id = search_text_field_update.Text;
+            Console.WriteLine(update_id);
+            search_text_field_update.Clear();
+
+            if ((update_id == "Student ID") || (update_id == ""))
+            {
+                MessageBox.Show("Enter Student ID", "Error");
+
+            }
+            else
+            {
+                try
+                {
+                    XDocument xml = XDocument.Load(xml_path);
+                    XElement student_search = xml.Element("student_data").Elements("student").Where(student => student.Attribute("id").Value == update_id).FirstOrDefault();
+
+                    if (student_search != null)
+                    {
+                        student_id_text_field_update.Text = student_search.Attribute("id").Value;
+                        student_name_text_field_update.Text = student_search.Element("name").Value;
+                        contact_text_field_update.Text = student_search.Element("contact").Value;
+                        institution_text_field_update.Text = student_search.Element("institution").Value;
+                        department_text_field_update.Text = student_search.Element("department").Value;
+                        semester_text_field_update.Text = student_search.Element("semester").Value;
+                        major_text_field_update.Text = student_search.Element("major").Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Student with ID " + update_id + " not found.", "Student not found!");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Data fetch failed", "Error");
+                }
+            }
+
+            search_text_field_update.Text = "Student ID";
+        }
+
+        private void search_text_field_update_Enter(object sender, EventArgs e)
+        {
+            if (search_text_field_update.Text == "Student ID")
+            {
+                search_text_field_update.Clear();
+            }
+        }
+
+        private void search_text_field_update_Leave(object sender, EventArgs e)
+        {
+            if (search_text_field_update.Text == "")
+            {
+                search_text_field_update.Text = "Student ID";
+
+            }
         }
     }
 

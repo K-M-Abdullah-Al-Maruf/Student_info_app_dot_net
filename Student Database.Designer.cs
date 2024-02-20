@@ -57,12 +57,32 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.Update = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.institution_text_field_update = new System.Windows.Forms.TextBox();
+            this.major_text_field_update = new System.Windows.Forms.TextBox();
+            this.semester_text_field_update = new System.Windows.Forms.TextBox();
+            this.department_text_field_update = new System.Windows.Forms.TextBox();
+            this.student_name_text_field_update = new System.Windows.Forms.TextBox();
+            this.contact_text_field_update = new System.Windows.Forms.TextBox();
+            this.search_text_field_update = new System.Windows.Forms.TextBox();
+            this.student_id_text_field_update = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.update_button = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.search_button_update = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.enter_info.SuspendLayout();
             this.view_all_data.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_table)).BeginInit();
             this.changeXmlPath.SuspendLayout();
+            this.Update.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileSystemWatcher1
@@ -75,6 +95,7 @@
             this.tabControl1.Controls.Add(this.enter_info);
             this.tabControl1.Controls.Add(this.view_all_data);
             this.tabControl1.Controls.Add(this.changeXmlPath);
+            this.tabControl1.Controls.Add(this.Update);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -377,6 +398,200 @@
             this.label9.Text = "Major";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // Update
+            // 
+            this.Update.Controls.Add(this.label4);
+            this.Update.Controls.Add(this.label10);
+            this.Update.Controls.Add(this.label11);
+            this.Update.Controls.Add(this.label12);
+            this.Update.Controls.Add(this.label13);
+            this.Update.Controls.Add(this.institution_text_field_update);
+            this.Update.Controls.Add(this.major_text_field_update);
+            this.Update.Controls.Add(this.semester_text_field_update);
+            this.Update.Controls.Add(this.department_text_field_update);
+            this.Update.Controls.Add(this.student_name_text_field_update);
+            this.Update.Controls.Add(this.contact_text_field_update);
+            this.Update.Controls.Add(this.search_text_field_update);
+            this.Update.Controls.Add(this.student_id_text_field_update);
+            this.Update.Controls.Add(this.label14);
+            this.Update.Controls.Add(this.update_button);
+            this.Update.Controls.Add(this.label15);
+            this.Update.Controls.Add(this.search_button_update);
+            this.Update.Controls.Add(this.label16);
+            this.Update.Location = new System.Drawing.Point(4, 25);
+            this.Update.Name = "Update";
+            this.Update.Padding = new System.Windows.Forms.Padding(3);
+            this.Update.Size = new System.Drawing.Size(929, 425);
+            this.Update.TabIndex = 3;
+            this.Update.Text = "Update";
+            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(350, 314);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 16);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Major";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(326, 275);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 16);
+            this.label10.TabIndex = 46;
+            this.label10.Text = "Semester";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(314, 236);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 16);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Department";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(330, 200);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 16);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "Institution";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(347, 123);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 16);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "Name";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // institution_text_field_update
+            // 
+            this.institution_text_field_update.Location = new System.Drawing.Point(402, 197);
+            this.institution_text_field_update.Name = "institution_text_field_update";
+            this.institution_text_field_update.Size = new System.Drawing.Size(136, 22);
+            this.institution_text_field_update.TabIndex = 42;
+            // 
+            // major_text_field_update
+            // 
+            this.major_text_field_update.Location = new System.Drawing.Point(402, 311);
+            this.major_text_field_update.Name = "major_text_field_update";
+            this.major_text_field_update.Size = new System.Drawing.Size(136, 22);
+            this.major_text_field_update.TabIndex = 41;
+            // 
+            // semester_text_field_update
+            // 
+            this.semester_text_field_update.Location = new System.Drawing.Point(402, 272);
+            this.semester_text_field_update.Name = "semester_text_field_update";
+            this.semester_text_field_update.Size = new System.Drawing.Size(136, 22);
+            this.semester_text_field_update.TabIndex = 40;
+            // 
+            // department_text_field_update
+            // 
+            this.department_text_field_update.Location = new System.Drawing.Point(402, 233);
+            this.department_text_field_update.Name = "department_text_field_update";
+            this.department_text_field_update.Size = new System.Drawing.Size(136, 22);
+            this.department_text_field_update.TabIndex = 39;
+            // 
+            // student_name_text_field_update
+            // 
+            this.student_name_text_field_update.Location = new System.Drawing.Point(402, 120);
+            this.student_name_text_field_update.Name = "student_name_text_field_update";
+            this.student_name_text_field_update.Size = new System.Drawing.Size(136, 22);
+            this.student_name_text_field_update.TabIndex = 38;
+            // 
+            // contact_text_field_update
+            // 
+            this.contact_text_field_update.Location = new System.Drawing.Point(402, 158);
+            this.contact_text_field_update.Name = "contact_text_field_update";
+            this.contact_text_field_update.Size = new System.Drawing.Size(136, 22);
+            this.contact_text_field_update.TabIndex = 32;
+            // 
+            // search_text_field_update
+            // 
+            this.search_text_field_update.Location = new System.Drawing.Point(345, 18);
+            this.search_text_field_update.Name = "search_text_field_update";
+            this.search_text_field_update.Size = new System.Drawing.Size(162, 22);
+            this.search_text_field_update.TabIndex = 36;
+            this.search_text_field_update.Text = "Student ID";
+            this.search_text_field_update.TextChanged += new System.EventHandler(this.search_text_field_update_TextChanged);
+            this.search_text_field_update.Enter += new System.EventHandler(this.search_text_field_update_Enter);
+            this.search_text_field_update.Leave += new System.EventHandler(this.search_text_field_update_Leave);
+            // 
+            // student_id_text_field_update
+            // 
+            this.student_id_text_field_update.BackColor = System.Drawing.SystemColors.Window;
+            this.student_id_text_field_update.Location = new System.Drawing.Point(402, 83);
+            this.student_id_text_field_update.Name = "student_id_text_field_update";
+            this.student_id_text_field_update.Size = new System.Drawing.Size(136, 22);
+            this.student_id_text_field_update.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(339, 161);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 16);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Contact";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // update_button
+            // 
+            this.update_button.AutoSize = true;
+            this.update_button.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.update_button.Location = new System.Drawing.Point(419, 368);
+            this.update_button.Name = "update_button";
+            this.update_button.Size = new System.Drawing.Size(91, 31);
+            this.update_button.TabIndex = 34;
+            this.update_button.Text = "Update";
+            this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.Location = new System.Drawing.Point(323, 89);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 16);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Student ID";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // search_button_update
+            // 
+            this.search_button_update.AutoSize = true;
+            this.search_button_update.Location = new System.Drawing.Point(513, 18);
+            this.search_button_update.Name = "search_button_update";
+            this.search_button_update.Size = new System.Drawing.Size(93, 26);
+            this.search_button_update.TabIndex = 37;
+            this.search_button_update.Text = "Search";
+            this.search_button_update.UseVisualStyleBackColor = true;
+            this.search_button_update.Click += new System.EventHandler(this.search_button_update_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(289, 21);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 16);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Search";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -395,6 +610,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.data_table)).EndInit();
             this.changeXmlPath.ResumeLayout(false);
             this.changeXmlPath.PerformLayout();
+            this.Update.ResumeLayout(false);
+            this.Update.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -429,6 +646,25 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage Update;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox institution_text_field_update;
+        private System.Windows.Forms.TextBox major_text_field_update;
+        private System.Windows.Forms.TextBox semester_text_field_update;
+        private System.Windows.Forms.TextBox department_text_field_update;
+        private System.Windows.Forms.TextBox student_name_text_field_update;
+        private System.Windows.Forms.TextBox contact_text_field_update;
+        private System.Windows.Forms.TextBox search_text_field_update;
+        private System.Windows.Forms.TextBox student_id_text_field_update;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button update_button;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button search_button_update;
+        private System.Windows.Forms.Label label16;
     }
 }
 

@@ -49,11 +49,11 @@
     <major>CS</major>
   </student>
   <student id="ab101">
-    <name>test</name>
+    <name>Sabbir</name>
     <contact>01234567898</contact>
-    <institution>test</institution>
-    <department>test</department>
-    <semester>test</semester>
-    <major>test</major>
+    <institution>NSU</institution>
+    <department>EEE</department>
+    <semester>Fall-19</semester>
+    <major>Power</major>
   </student>
 </student_data>
