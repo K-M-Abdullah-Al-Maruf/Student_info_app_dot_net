@@ -1,30 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <student_data>
   <student id="1">
+    <name>Maruf</name>
     <contact>01310203482</contact>
+    <institution>BRAC University</institution>
+    <department>CSE</department>
+    <semester>Spring-19</semester>
+    <major>CSE</major>
   </student>
   <student id="2">
-    <contact>01813399616</contact>
+    <name>Hannan</name>
+    <contact>01740734117</contact>
+    <institution>BRAC University</institution>
+    <department>CSE</department>
+    <semester>Spring-20</semester>
+    <major>CSE</major>
   </student>
   <student id="3">
-    <contact>12345678900</contact>
+    <name>Akash</name>
+    <contact>01215141789</contact>
+    <institution>AIUB</institution>
+    <department>BBA</department>
+    <semester>Spring-22</semester>
+    <major>Marketing</major>
   </student>
   <student id="4">
-    <contact>01320302485</contact>
+    <name>Masud</name>
+    <contact>12345678912</contact>
+    <institution>Daffodil University</institution>
+    <department>CSE</department>
+    <semester>Spring-15</semester>
+    <major>CSE</major>
   </student>
   <student id="5">
-    <contact>01310203482</contact>
+    <name>Abir</name>
+    <contact>01326457895</contact>
+    <institution>UIU</institution>
+    <department>CSE</department>
+    <semester>Summer-15</semester>
+    <major>CSE</major>
   </student>
   <student id="6">
-    <contact>01310203482</contact>
-  </student>
-  <student id="7">
-    <contact>12121212121</contact>
-  </student>
-  <student id="8">
-    <contact>32146578987</contact>
-  </student>
-  <student id="9">
-    <contact>12345678912</contact>
+    <name>Mahfuz</name>
+    <contact>21364597864</contact>
+    <institution>BRAC University</institution>
+    <department>CSE</department>
+    <semester>Summer-19</semester>
+    <major>CS</major>
   </student>
 </student_data>
